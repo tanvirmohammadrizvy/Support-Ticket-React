@@ -23,8 +23,12 @@ export default function Router() {
   return useRoutes([
     {
       path: '/',
-      element: <Navigate to="/dashboard/one" replace />,
+      element: <DashboardLayout />,
+      children: [
+        { path: 'brands', element: <BrandList to="brands" /> },
+      ],
     },
+    
     {
       path: '/dashboard',
       element: <DashboardLayout />,
@@ -65,3 +69,6 @@ const PageFour = Loadable(lazy(() => import('../pages/PageFour')));
 const PageFive = Loadable(lazy(() => import('../pages/PageFive')));
 const PageSix = Loadable(lazy(() => import('../pages/PageSix')));
 const NotFound = Loadable(lazy(() => import('../pages/Page404')));
+
+// Brand Section
+const BrandList = Loadable(lazy(() => import('../pages/Brand/List')))

@@ -13,6 +13,17 @@ const ICONS = {
 };
 
 const sidebarConfig = [
+
+  // BRAND SECTION
+  // ----------------------------------------------------------------------
+  {
+    subheader: 'Brand Section',
+    items: [
+      { title: 'Brands', path: '/brands', icon: ICONS.dashboard },
+    ], 
+  },
+
+
   // GENERAL
   // ----------------------------------------------------------------------
   {

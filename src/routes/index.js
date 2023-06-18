@@ -26,26 +26,7 @@ export default function Router() {
       element: <DashboardLayout />,
       children: [
         { path: 'brands', element: <BrandList to="brands" /> },
-      ],
-    },
-    
-    {
-      path: '/dashboard',
-      element: <DashboardLayout />,
-      children: [
-        { element: <Navigate to="/dashboard/one" replace />, index: true },
-        { path: 'one', element: <PageOne /> },
-        { path: 'two', element: <PageTwo /> },
-        { path: 'three', element: <PageThree /> },
-        {
-          path: 'user',
-          children: [
-            { element: <Navigate to="/dashboard/user/four" replace />, index: true },
-            { path: 'four', element: <PageFour /> },
-            { path: 'five', element: <PageFive /> },
-            { path: 'six', element: <PageSix /> },
-          ],
-        },
+        { path: 'brands/create', element: <BrandCreate /> }, 
       ],
     },
     {
@@ -61,14 +42,8 @@ export default function Router() {
 }
 
 
-// Dashboard
-const PageOne = Loadable(lazy(() => import('../pages/PageOne')));
-const PageTwo = Loadable(lazy(() => import('../pages/PageTwo')));
-const PageThree = Loadable(lazy(() => import('../pages/PageThree')));
-const PageFour = Loadable(lazy(() => import('../pages/PageFour')));
-const PageFive = Loadable(lazy(() => import('../pages/PageFive')));
-const PageSix = Loadable(lazy(() => import('../pages/PageSix')));
 const NotFound = Loadable(lazy(() => import('../pages/Page404')));
 
 // Brand Section
 const BrandList = Loadable(lazy(() => import('../pages/Brand/List')))
+const BrandCreate = Loadable(lazy(() => import('../pages/Brand/Create')))
